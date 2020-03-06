@@ -4,6 +4,13 @@ Asp.net core authorization tag helpers.
 
 # Get Started
 
+### _ViewImports.cshtml
+
+```C#
+@addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
+@addTagHelper *, CodeCityCrew.TagHelpers.Authorization
+```
+
 ### Role
 ```html
 <li class="nav-item" asp-role="administrator">
