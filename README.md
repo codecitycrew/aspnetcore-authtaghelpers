@@ -2,7 +2,7 @@
 
 Asp.net core authorization tag helpers.
 
-# Get Satrted
+# Get Started
 
 ### Role
 ```html
