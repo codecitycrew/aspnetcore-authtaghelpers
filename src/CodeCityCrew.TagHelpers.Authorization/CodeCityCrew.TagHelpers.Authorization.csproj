@@ -1,9 +1,9 @@
-<Project Sdk="Microsoft.NET.Sdk">
+﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
     <TargetFramework>netcoreapp3.1</TargetFramework>
     <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
-    <Version>1.0.0-alpha</Version>
+    <Version>1.0.1-alpha</Version>
     <Authors>Code City Crew</Authors>
     <Company>Code City Crew</Company>
     <Product>Authorization Tag Helpers</Product>
@@ -11,12 +11,21 @@
     <RepositoryUrl>https://github.com/codecitycrew/aspnetcore-authtaghelpers</RepositoryUrl>
     <PackageTags>taghelper,authorization,asp.net core</PackageTags>
     <PackageProjectUrl>https://github.com/codecitycrew/aspnetcore-authtaghelpers</PackageProjectUrl>
-    <PackageIcon>https://en.gravatar.com/userimage/181118921/54b79918345c6db147b84b4aef2bfc19.png</PackageIcon>
+    <Description>Authorization tag helpers for Asp.Net Core. Role, resource and policy.</Description>
+    <PackageIcon>icon.png</PackageIcon>
+    <PackageIconUrl />
   </PropertyGroup>
 
   <ItemGroup>
     <PackageReference Include="Microsoft.AspNetCore.Authorization" Version="3.1.2" />
     <PackageReference Include="Microsoft.AspNetCore.Mvc.TagHelpers" Version="2.2.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Include="image\icon.png">
+      <Pack>True</Pack>
+      <PackagePath></PackagePath>
+    </None>
   </ItemGroup>
 
 </Project>
