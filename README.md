@@ -4,6 +4,12 @@ Asp.net core authorization tag helpers.
 
 # Get Started
 
+### Install
+
+```ps 
+Install-Package CodeCityCrew.TagHelpers.Authorization -Version 1.0.1-alpha
+```
+
 ### _ViewImports.cshtml
 
 ```C#
