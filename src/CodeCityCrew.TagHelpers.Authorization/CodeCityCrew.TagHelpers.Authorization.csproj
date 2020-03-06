@@ -9,8 +9,9 @@
     <Product>Authorization Tag Helpers</Product>
     <Copyright>Code City Crew LLC</Copyright>
     <RepositoryUrl>https://github.com/codecitycrew/aspnetcore-authtaghelpers</RepositoryUrl>
-    <PackageTags>taghelper</PackageTags>
+    <PackageTags>taghelper,authorization,asp.net core</PackageTags>
     <PackageProjectUrl>https://github.com/codecitycrew/aspnetcore-authtaghelpers</PackageProjectUrl>
+    <PackageIcon>https://en.gravatar.com/userimage/181118921/54b79918345c6db147b84b4aef2bfc19.png</PackageIcon>
   </PropertyGroup>
 
   <ItemGroup>
