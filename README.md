@@ -37,3 +37,16 @@ Install-Package CodeCityCrew.TagHelpers.Authorization -Version 1.0.1-alpha
   <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Edit">Home</a>
 </li>
 ```
+
+### Is User Signed
+```html
+<li asp-is-signed="false">
+  <a asp-area="Identity" asp-page="/Account/Register">Register</a>
+</li>
+<li asp-is-signed="false">
+  <a asp-area="Identity" asp-page="/Account/Login">Login</a>
+</li>
+<li asp-is-signed="true">
+  <a href="#">Logout</a>
+</li>
+```
