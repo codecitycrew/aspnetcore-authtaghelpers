@@ -46,7 +46,9 @@ Install-Package CodeCityCrew.TagHelpers.Authorization -Version 1.0.2
 <li asp-is-signed="false">
   <a asp-area="Identity" asp-page="/Account/Login">Login</a>
 </li>
-<li asp-is-signed="true">
-  <a href="#">Logout</a>
+ <li asp-is-signed="true">
+    <form class="form-inline" asp-area="Identity" asp-page="/Account/Logout" asp-route-returnUrl="@Url.Action("Index", "Home", new {area = "Administration"})">
+        <button type="submit" class="btn btn-success btn-sm">Logout</button>
+    </form>
 </li>
 ```
