@@ -15,7 +15,20 @@ namespace CodeCityCrew.TagHelpers.Authorization
             _authorizationService = authorizationService;
         }
 
+        /// <summary>
+        /// Gets or sets the ASP resource.
+        /// </summary>
+        /// <value>
+        /// The ASP resource.
+        /// </value>
         public object AspResource { get; set; }
+
+        /// <summary>
+        /// Gets or sets the ASP policy.
+        /// </summary>
+        /// <value>
+        /// The ASP policy.
+        /// </value>
         public string AspPolicy { get; set; }
 
         public override async Task ProcessAsync(TagHelperContext context, TagHelperOutput output)
@@ -28,18 +41,6 @@ namespace CodeCityCrew.TagHelpers.Authorization
             }
 
             base.Process(context, output);
-        }
-    }
-
-    [HtmlTargetElement("bold")]
-    [HtmlTargetElement(Attributes = "bold")]
-    public class BoldTagHelper : TagHelper
-    {
-        public override void Process(TagHelperContext context, TagHelperOutput output)
-        {
-            output.Attributes.RemoveAll("bold");
-            output.PreContent.SetHtmlContent("<strong>");
-            output.PostContent.SetHtmlContent("</strong>");
         }
     }
 }
