@@ -6,15 +6,13 @@ using Microsoft.AspNetCore.Razor.TagHelpers;
 namespace CodeCityCrew.TagHelpers.Authorization
 {
     [HtmlTargetElement(Attributes = "asp-resource,asp-policy")]
-    public class AuthorizationResourceTagHelper : TagHelper
+    public class AuthorizationResourceTagHelper : TagHelperBase
     {
         private readonly IAuthorizationService _authorizationService;
-        private readonly IActionContextAccessor _actionContextAccessor;
 
-        public AuthorizationResourceTagHelper(IAuthorizationService authorizationService, IActionContextAccessor actionContextAccessor)
+        public AuthorizationResourceTagHelper(IAuthorizationService authorizationService, IActionContextAccessor actionContextAccessor) : base(actionContextAccessor)
         {
             _authorizationService = authorizationService;
-            _actionContextAccessor = actionContextAccessor;
         }
 
         public object AspResource { get; set; }
@@ -22,9 +20,7 @@ namespace CodeCityCrew.TagHelpers.Authorization
 
         public override async Task ProcessAsync(TagHelperContext context, TagHelperOutput output)
         {
-            var user = _actionContextAccessor.ActionContext.HttpContext.User;
-
-            var authorizeAsync = await _authorizationService.AuthorizeAsync(user, AspResource, AspPolicy);
+            var authorizeAsync = await _authorizationService.AuthorizeAsync(User, AspResource, AspPolicy);
 
             if (!authorizeAsync.Succeeded)
             {
@@ -32,6 +28,18 @@ namespace CodeCityCrew.TagHelpers.Authorization
             }
 
             base.Process(context, output);
+        }
+    }
+
+    [HtmlTargetElement("bold")]
+    [HtmlTargetElement(Attributes = "bold")]
+    public class BoldTagHelper : TagHelper
+    {
+        public override void Process(TagHelperContext context, TagHelperOutput output)
+        {
+            output.Attributes.RemoveAll("bold");
+            output.PreContent.SetHtmlContent("<strong>");
+            output.PostContent.SetHtmlContent("</strong>");
         }
     }
 }
